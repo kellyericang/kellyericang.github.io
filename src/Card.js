@@ -3,68 +3,31 @@ import 'tachyons';
 // import './Card.css';
 
 class Card extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
-			isLoading: true,
-			shibe: [],
-			error: null
+			shibe: "",
 		}
 	}
 
-	// fetchShibe() {
-	// 	fetch('http://shibe.online/api/shibes?count=1', {
-	// 		mode: "no-cors"
-	// 	})
-	// 		.then((response) => {
-	// 			console.log('before response.json()');
-	// 			response.json();
-	// 			console.log('after response.json()');
-	// 		})
-	// 		.then(data => {
-	// 			console.log('got the data');
-	// 			console.log(data);
-	// 			this.setState({ 
-	// 				shibe: data,
-	// 				isLoading: false, 
-	// 			});
-	// 		})
-	// 		.catch(error => this.setState({error, isLoading: false}));
-	// }
-
 	async componentDidMount() {
-		const response = await fetch('http://shibe.online/api/shibes?count=1', {
+		const response = await fetch('http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=false', {
 			mode: "no-cors"
 		})
-		const data = await response.json();
-		this.setState({
-			shibe: data,
-			isLoading: false
-		})
-		// this.fetchShibe();
+		console.log('response:', response);
+		const obj = await JSON.parse(response); 
+		await console.log('object', obj);
 	}
 
 	render() {
-		const {isLoading, shibe, error} = this.state;
-		console.log(this.state);
+		// const {shibe} = this.state;
+		const shibe = "http://cdn.shibe.online/shibes/23efb1e47e0c860724a333aba56aaca24be97b9f.jpg";
+		console.log('state', this.state);
+		console.log('shibe', shibe);
 		return (
-			<div>
-				{error ? <p>{error.message}</p> : null}
-				{!isLoading ? (
-			        shibe.map(picture => {
-			            const shibe2 = picture;
-			            console.log(shibe2);
-			            return (
-				            <div>
-				              	<p>{shibe2}</p>
-				            </div>
-				        );
-				    })
-				    // If there is a delay in data, let's let the user know it's loading
-				) : (
-				    <h3>Loading...</h3>
-			    )}
-				{this.state.shibe}
+			<div className="ba br4 w-10">
+				<img alt="shibe" src={shibe} height="100" width="100"/>
+				<p>hello shibe</p>
 			</div>
 		)
 	}
