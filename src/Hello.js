@@ -5,8 +5,8 @@ class Hello extends Component {
 	render() {
 		return (
 			<div className='tc garamond'>
-				<h1>henlo puppers</h1>
-				<p>{this.props.greeting}</p>
+				<h1>doggo slot machine</h1>
+				<h5>{this.props.greeting}</h5>
 			</div>
 		)
 	}

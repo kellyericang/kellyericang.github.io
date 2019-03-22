@@ -6,7 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d3d0cb;
+  background-color: #040609;
+  color: #f7fef7;
 }
 
 code {
@@ -14,6 +15,6 @@ code {
     monospace;
 }
 
-.puppers {
-	display: flex;
+div { 
+  text-align: center;
 }

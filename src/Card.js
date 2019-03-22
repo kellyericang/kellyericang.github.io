@@ -28,8 +28,8 @@ class Card extends Component {
 	render() {
 		const {doggo, breed} = this.state;
 		return (
-			<div className="card ba br3 w-20 bw1 bg-navy">
-				<img alt="loading" src={doggo}/>
+			<div className="card br3 w-20 bw0">
+				<img src={doggo}/>
 				<p>{breed}</p>
 			</div>
 		)
