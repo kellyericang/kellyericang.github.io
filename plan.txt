@@ -1,0 +1,3 @@
+start menu --> shows board 
+get an array of 75 objects 
+randomly assign each card (25 total) a doggo without repeats (array instance)

@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
-import Card from './Card';
+import './Card';
 
 class Spin extends Component {
 	render() {
 		return (
 			<div>
-				<button>spin!</button>
+				<button onClick={newBoard}>spin!</button>
 			</div>
 		)
 	}
 }
 
 export default Spin;
+
+function newBoard() {
+	console.log("spin button clicked!");
+}

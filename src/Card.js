@@ -21,16 +21,16 @@ class Card extends Component {
 			doggo: obj.message,
 			breed: getBreed(obj.message)
 		});
-		console.log(`[${this.state.breed}]  state:`, this.state);
+		// console.log(`[${this.state.breed}]  state:`, this.state);
 
 	}
 
 	render() {
-		const {doggo, breed} = this.state;
+		// const {doggo, breed} = this.state;
 		return (
 			<div className="card br3 w-20 bw0">
-				<img src={doggo}/>
-				<p>{breed}</p>
+				<img alt="" src={this.props.doggo}/>
+				<p>{this.props.breed}</p>
 			</div>
 		)
 	}
@@ -43,10 +43,10 @@ function getBreed(url) {
 
 	//removing hyphen and swapping words
 	if(breed.search("-") < 0) {
-		console.log(`[${breed}]  not swapping`);
+		// console.log(`[${breed}]  not swapping`);
 		return breed;
 	} else {
-		console.log(`[${breed}]  swapping words`);
+		// console.log(`[${breed}]  swapping words`);
 		let hyphen = breed.indexOf("-");
 		return breed.substring(hyphen+1) + " " + breed.substring(0,hyphen);
 	}

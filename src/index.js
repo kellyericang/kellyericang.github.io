@@ -2,21 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Hello from './Hello';
-import Card from './Card';
-import Row from './Row';
-import Spin from './Spin';
+import Board from './Board';
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';
 
 ReactDOM.render(
 	<div>
 		<Hello greeting={"press the spin button"}/>
-		<Row />
-		<Row />
-		<Row />
-		<Row />
-		<Row />
-		<Spin />
+		<Board />
 	</div>
 , document.getElementById('root'));
 

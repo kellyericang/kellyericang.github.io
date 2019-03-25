@@ -1,0 +1,11 @@
+.board {
+	text-align: center;
+}
+
+.cards { 
+	display: grid;
+	grid-template-columns: repeat(5, 15%);
+	grid-template-rows: repeat(5, 10%);
+	justify-items: center;
+	justify-content: center;
+}
