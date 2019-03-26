@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Hello from './Hello';
+// import Start from './Start';
 import Board from './Board';
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';
 
 ReactDOM.render(
 	<div>
-		<Hello greeting={"press the spin button"}/>
 		<Board />
 	</div>
 , document.getElementById('root'));

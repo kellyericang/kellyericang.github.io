@@ -2,10 +2,19 @@
 	text-align: center;
 }
 
-.cards { 
-	display: grid;
+.cards {
+	display: none; 	
 	grid-template-columns: repeat(5, 15%);
 	grid-template-rows: repeat(5, 10%);
 	justify-items: center;
 	justify-content: center;
+}
+
+.spinButton {
+	display: none;
+	text-align: center;
+}
+
+.scoreboard {
+	display: none;
 }
