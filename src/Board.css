@@ -8,6 +8,7 @@
 	grid-template-rows: repeat(5, 10%);
 	justify-items: center;
 	justify-content: center;
+	background-color: white;
 }
 
 .spinButton {
