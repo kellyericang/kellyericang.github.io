@@ -26,4 +26,9 @@ each rng number is the middle one for that reel
 make above and below +- 1 
 generate the cards 
 
+board
+0 3 6 9  12
+1 4 7 10 13
+2 5 8 11 14
+
 ***/
