@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Card from './Card';
-// import Spin from './Spin';
+import Scoreboard from './Scoreboard';
 import './Board.css';
 const   reel0 = [10,9,2,4,8,5,7,9,4,6,3,8,5,9,1,3,6,7,5,0,8,9,2,7,5,10,6,8,4,3,1,6],
 		reel1 = [9,3,1,4,7,9,2,6,8,1,4,9,2,0,6,5,7,8,4,3,10,9,6,7,8,5,3,9,1,2,7,8],
@@ -36,17 +36,6 @@ class Board extends Component {
 		});
 	}
 
-	renderCard(i) {
-		let x = this.state.boardState[i];
-	    return (
-	      <Card 
-	        // breed={this.state.breedArray[x]}
-	        breed={x}
-	        doggo={this.state.urlArray[x]}
-	      />
-	    );
-	  }
-
 	newBoardState() {
 		let newState = [];
 		let i, x, column = 1;
@@ -61,18 +50,7 @@ class Board extends Component {
 		this.setState({
 			boardState: newState
 		});
-		console.log("new state:", this.state.boardState);
-	}
 
-	newBoard() {
-		console.log("spin button clicked!");
-		// let i=0;
-		// while(i<100000){
-		// 	i++;
-		// }
-		this.newBoardState();
-		this.addScore(-1);
-		this.checkWin();
 	}
 
 	addScore(i) {
@@ -80,6 +58,8 @@ class Board extends Component {
 		this.setState({
 			score: this.state.score + i
 		})
+		// console.log(`new score ${this.state.score}`)
+		
 	}
 
 	checkWin(){
@@ -102,41 +82,68 @@ class Board extends Component {
 		]
 		let i=0, lineWin=0, totalWin=0;
 		let currentState = this.state.boardState.slice(0);
-		console.log("current state:", currentState);
 		for(i=0; i<15; i++) {
-			if(currentState[winningLines[i][0]] === currentState[winningLines[i][1]] === currentState[winningLines[i][2]]){
-				lineWin = 3;
-				if(currentState[winningLines[i][2]] === currentState[winningLines[3]]) {
-					lineWin++;
-					if(currentState[winningLines[i][3]] === currentState[winningLines[i][4]]) {lineWin++;}
+			if (currentState[winningLines[i][0]] !== currentState[winningLines[i][1]]) continue;
+			else if (currentState[winningLines[i][1]] !== currentState[winningLines[i][2]]) continue; 
+			else {
+				lineWin = 5;
+				if (currentState[winningLines[i][0]] === currentState[winningLines[i][3]]) {
+					lineWin = 10;
+					if (currentState[winningLines[i][0]] === currentState[winningLines[i][4]]) lineWin = 15;	
 				}
 			}
-
-			totalWin += lineWin;
+			if(lineWin !== 0) console.log(`won ${lineWin} on line ${i}`)
+			totalWin = totalWin + lineWin;
 			lineWin = 0;
 		}
-		this.addScore(totalWin);
+		
+		if (totalWin !== 0) this.addScore(totalWin);
 	}
 
+	renderCard(i) {
+		let x = this.state.boardState[i];
+	    return (
+	      <Card 
+	        // breed={this.state.breedArray[x]}
+	        breed={x}
+	        doggo={this.state.urlArray[x]}
+	      />
+	    );
+	  }
+
+	renderScoreboard(){
+		return (
+			<Scoreboard score={this.state.score} />
+		);
+	}
 
 	render() {
 		// console.log("current state:", this.state.boardState);
 		return (
 			<div className="board">
 				<h1 className='tc garamond'>doggo slot machine</h1>
-				<div className="scoreboard">Score: {this.state.score}</div>
+				{this.renderScoreboard()}
 				<button className='startGameButton' 
 					onClick={() => {document.querySelector(".cards").style.display = "grid";
 					document.querySelector(".startGameButton").style.display = "none";
 					document.querySelector(".spinButton").style.display="inline";
-					document.querySelector(".scoreboard").style.display="inline"}}>
-					START GAME</button>
+					document.querySelector(".scoreboard").style.display="inline";
+					}}>START GAME</button>
 				<div className="cards">
 					{this.renderCard(0)}{this.renderCard(3)}{this.renderCard(6)}{this.renderCard(9)}{this.renderCard(12)}
 					{this.renderCard(1)}{this.renderCard(4)}{this.renderCard(7)}{this.renderCard(10)}{this.renderCard(13)}
 					{this.renderCard(2)}{this.renderCard(5)}{this.renderCard(8)}{this.renderCard(11)}{this.renderCard(14)}
 				</div>
-				<button className='spinButton' onClick={() => this.newBoard()}>spin!</button>
+				<button className='spinButton' onClick={() => {
+					sleep(1000);
+					this.newBoardState();
+					this.addScore(-1);
+					this.renderScoreboard();
+					this.checkWin();
+					
+					this.renderScoreboard();
+					
+				}}>spin!</button>
 			</div>
 		)
 	}
@@ -174,4 +181,13 @@ function getNextReel(i){
 	} else {
 		return i + 1;
 	}
+}
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
 }

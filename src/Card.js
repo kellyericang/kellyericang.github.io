@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import 'tachyons';
 import './Card.css';
 
-
-
 class Card extends Component {
 	constructor(props) {
 		super(props);
