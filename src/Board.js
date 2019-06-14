@@ -135,7 +135,7 @@ class Board extends Component {
 					{this.renderCard(2)}{this.renderCard(5)}{this.renderCard(8)}{this.renderCard(11)}{this.renderCard(14)}
 				</div>
 				<button className='spinButton' onClick={() => {
-					sleep(1000);
+					
 					this.newBoardState();
 					this.addScore(-1);
 					this.renderScoreboard();
