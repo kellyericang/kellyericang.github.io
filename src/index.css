@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 body {
   margin: 0;
   padding: 0;
@@ -14,3 +15,70 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+=======
+html {
+	background-color: black;
+	background-image: url('jellyfish.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+}
+
+h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3rem;
+	color: #e6e6e6;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	margin-block-end: 0;
+	margin-block-start: 0;
+	text-align: center;
+	text-shadow: 2px 2px 5px #343434;
+} 
+
+h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2rem;
+	color: #e6e6e6;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	margin-block-end: 0;
+	margin-block-start: 0;
+	text-align: center;
+	text-shadow: 2px 2px 5px #343434;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+	color: #e6e6e6;
+	font-size: 1.5rem;
+	text-align: center;
+	text-shadow: 2px 2px 5px #343434;
+	padding: 0.5em 1em;
+}
+
+a {
+	color: #1481ba;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.5rem;
+}
+
+footer {
+	font-family: 'Roboto', sans-serif;
+	color: #e6e6e6;
+	font-size: 1em;
+	text-align: center;
+	text-shadow: 2px 2px 5px #343434;
+	padding: 1em 1em;
+	position: relative;
+	bottom: 0px;
+
+}
+
+.index {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+>>>>>>> Stashed changes

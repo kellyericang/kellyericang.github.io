@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+<<<<<<< Updated upstream
 import './index.css';
 import Board from './Board';
 import * as serviceWorker from './serviceWorker';
@@ -8,6 +9,23 @@ import 'tachyons';
 ReactDOM.render(
 	<div>
 		<Board />
+=======
+import Header from './Header';
+import Footer from './Footer';
+import * as serviceWorker from './serviceWorker';
+import './index.css';
+
+ReactDOM.render(
+	<div className="index">
+		<Header />
+		<body> 
+			<h2>About Me</h2>
+			<p>Hello! My name is Kelly Ng and this is my personal website! I graduated from McMaster University with a B.Eng in Biomedical and Electrical Engineering in 2020 with 20 months of co-op experience. I enjoy making things and this website will showcase some of my projects. </p>
+			<h3>Making of this Website</h3>
+			<p>I made this website using React and CSS and it's hosted on Github Pages. My Instagram page showcases some of the crafts I've made.</p>
+		</body>
+		<Footer />
+>>>>>>> Stashed changes
 	</div>
 , document.getElementById('root'));
 
@@ -17,6 +35,7 @@ ReactDOM.render(
 serviceWorker.unregister();
 
 
+<<<<<<< Updated upstream
 /*** 
 
 grab 15 dogs from the online api database 
@@ -32,3 +51,5 @@ board
 2 5 8 11 14
 
 ***/
+=======
+>>>>>>> Stashed changes
