@@ -1,15 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-<<<<<<< Updated upstream
-import './index.css';
-import Board from './Board';
-import * as serviceWorker from './serviceWorker';
-import 'tachyons';
-
-ReactDOM.render(
-	<div>
-		<Board />
-=======
 import Header from './Header';
 import Footer from './Footer';
 import * as serviceWorker from './serviceWorker';
@@ -25,7 +13,6 @@ ReactDOM.render(
 			<p>I made this website using React and CSS and it's hosted on Github Pages. My Instagram page showcases some of the crafts I've made.</p>
 		</body>
 		<Footer />
->>>>>>> Stashed changes
 	</div>
 , document.getElementById('root'));
 
@@ -33,23 +20,3 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
-
-
-<<<<<<< Updated upstream
-/*** 
-
-grab 15 dogs from the online api database 
-have a set pattern for the reels 
-each spin, rng 5 numbers (one for each reel) 
-each rng number is the middle one for that reel 
-make above and below +- 1 
-generate the cards 
-
-board
-0 3 6 9  12
-1 4 7 10 13
-2 5 8 11 14
-
-***/
-=======
->>>>>>> Stashed changes
