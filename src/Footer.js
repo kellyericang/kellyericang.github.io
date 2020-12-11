@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './Footer.css';
 import instaLogo from "./insta-logo.png";
 import githubLogo from "./github-logo.png";
