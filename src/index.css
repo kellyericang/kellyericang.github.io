@@ -35,17 +35,17 @@ h3 {
 p {
 	font-family: 'Roboto', sans-serif;
 	color: #e6e6e6;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	text-align: center;
 	text-shadow: 2px 2px 5px #343434;
 	padding: 1em 0.75em;
-	background: #292929CC;
+	
 }
 
 a {
 	color: #1481ba;
 	font-family: 'Roboto', sans-serif;
-	font-size: 1.5rem;
+	font-size: 1rem;
 }
 
 body {
@@ -53,12 +53,11 @@ body {
 	flex-direction: column;
 }
 
-row {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 
+row {
+		display: flex;
+		flex-direction: column;
+	}
 footer {
 	font-family: 'Roboto', sans-serif;
 	color: #e6e6e6;
@@ -71,20 +70,60 @@ footer {
 
 }
 
+.section {
+	background: #292929CC;
+	margin: 2em 2em 2em 2em;
+}
+
 .profile {
-	max-height: 200px;
+	max-height: 50px;
 }
 
 .cookie {
-	max-height: 200px;
+	max-height: 50px;
+	order: -1;
 }
 
 .capstone {
-	max-height: 150px;
+	max-height: 25px;
 }
 
 .cards {
-	max-height: 200px;
+	max-height: 50px;
+}
+
+@media only screen and (min-width: 720px) {
+	p {
+		font-size: 1.5rem;
+	}
+
+	a {
+		font-size: 1.5rem;
+	}
+
+	row {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.profile {
+		max-height: 200px;
+	}
+
+	.cookie {
+		max-height: 200px;
+	}
+
+	.capstone {
+		max-height: 150px;
+	}
+
+	.cards {
+		max-height: 200px;
+	}
+
+
 }
 
 .index {
