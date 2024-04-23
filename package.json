@@ -5,7 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.5.0",
     "create-react-app": "^3.4.1",
-    "gh-pages": "^2.2.0",
+    "gh-pages": "^5.0.0",
     "jquery": "^3.5.1",
     "live-server": "^1.2.1",
     "object-path": "^0.11.5",
