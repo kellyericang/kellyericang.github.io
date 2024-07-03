@@ -13,7 +13,7 @@
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.8.6",
-    "react-scripts": "^4.0.1",
+    "react-scripts": "^5.0.1",
     "react-scrollbars-custom": "^4.0.25",
     "react-transition-group": "^4.4.1",
     "sass": "^1.26.9",
